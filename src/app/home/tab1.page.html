@@ -1,0 +1,43 @@
+<ion-header [translucent]="true" align="Center">
+  <ion-toolbar>
+
+    <ion-icon size="large" name="checkmark-circle-outline"></ion-icon><br>
+    <ion-title class="titleicon" style="display:inline-block">{{title}}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1 class="no-task" style="text-align:center;" *ngIf="tasks.length === 0">
+    You have no tasks right now! <br>
+    Add an item to the list!
+  </h1>
+  <ion-grid>
+    <ion-card>
+     <ion-row class="ion-text-center">
+      <ion-col size="4" *ngFor="let task of tasks; let i = index">
+        <!-- <ion-item ion-button (click)="editTask(task, i, task._id)"> -->
+            <ion-card-header>
+              <ion-card-title>{{task.name}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-label>{{task.duedate}}<p>{{task.priority}}</p></ion-label>
+              <button (click)="removeTask(task, task._id)" ion-button color="red" round>done</button><p></p>
+              <button (click)="editTask(task, i, task._id)" ion-button color="red" round>Edit</button>
+              
+            </ion-card-content>
+        <!-- </ion-item> -->
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  </ion-grid>
+
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="center">
+    <ion-fab-button size="small">
+      <ion-item-option (click)="addTask()">
+        <ion-icon name="add"></ion-icon>
+      </ion-item-option>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
