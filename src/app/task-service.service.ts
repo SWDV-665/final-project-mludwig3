@@ -19,7 +19,7 @@ export class TaskServiceService {
 
   private dataChangeSubject!: Subject<boolean>;
 
-  baseURL = "https://cc13-75-97-206-96.ngrok-free.app/api/taskify"; 
+  baseURL = "https://dddc-204-186-231-38.ngrok-free.app/api/taskify"; 
 
   constructor(private https: HttpClient) {
     console.log('Hello');

@@ -3,7 +3,15 @@
 
     <ion-icon size="large" name="checkmark-circle-outline"></ion-icon><br>
     <ion-title class="titleicon" style="display:inline-block">{{title}}</ion-title>
-
+    
+    <ion-buttons slot="end">
+      <ion-button size="small" shape = "Rectangle">
+        <ion-item-option (click)="addTask()">
+          New
+        </ion-item-option>
+      </ion-button>
+      
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -22,8 +30,8 @@
             </ion-card-header>
             <ion-card-content>
               <ion-label>{{task.duedate}}<p>{{task.priority}}</p></ion-label>
-              <button (click)="removeTask(task, task._id)" ion-button color="red" round>done</button><p></p>
-              <button (click)="editTask(task, i, task._id)" ion-button color="red" round>Edit</button>
+              <button (click)="removeTask(task, task._id)" style = "background-color: green; color: white; padding: 5px;">done</button><p></p>
+              <button (click)="editTask(task, i, task._id)" style = "background-color: green; color: white; padding: 7px;">Edit</button>
               
             </ion-card-content>
         <!-- </ion-item> -->
@@ -33,11 +41,8 @@
   </ion-grid>
 
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="center">
-    <ion-fab-button size="small">
-      <ion-item-option (click)="addTask()">
-        <ion-icon name="add"></ion-icon>
-      </ion-item-option>
-    </ion-fab-button>
+  <ion-fab slot="fixed" vertical="Top" horizontal="start" text-align = "center" padding = 20>
+
   </ion-fab>
 </ion-content>
+

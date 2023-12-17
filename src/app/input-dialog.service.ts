@@ -6,13 +6,17 @@ import { AlertController } from '@ionic/angular';
   providedIn: 'root'
 })
 
+
 //Create input class
+
+
 
 export class InputDialogService {
 
   constructor(public dataService: TaskServiceService, public alertCtrl: AlertController) {
     console.log('Hello InputDialogService Provider');
   }
+  
 
   async showPrompt(task?: any, index?: number, id?: any) {
     const alert = await this.alertCtrl.create({
@@ -45,13 +49,15 @@ export class InputDialogService {
           name: 'duedate',
           type: 'date',
           placeholder: 'Due Date',
-          value: task? task.duedate: null
+          value: task? task.duedate: null,
+    
         },
         {
           name: 'priority',
           type: 'string',
           placeholder: 'Priority level',
           value: task? task.priority: null
+          
         }
       ]
        
